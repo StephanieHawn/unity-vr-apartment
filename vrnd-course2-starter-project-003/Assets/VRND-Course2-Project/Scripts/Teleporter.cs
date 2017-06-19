@@ -8,6 +8,9 @@ public class Teleporter : MonoBehaviour {
     // How fast to move to new location?
     public float speed = 10.0f;
 
+	// flag that prevents teleportation
+	private bool blocked = false;
+
     // Cached transforms for all waypoints
     private Transform[] waypoints;
     // Which waypoint is active?
@@ -57,11 +60,21 @@ public class Teleporter : MonoBehaviour {
             return;
         }
         // If the viewer pressed the cardboard button, then go to the next waypoint
-        if (viewer.Triggered) {
+		if (viewer.Triggered && !blocked) {
             currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
         }
         // Smoothly move the viewer towards to the active waypoint
         Vector3 destPos = waypoints[currentWaypointIndex].transform.position + Vector3.up * height;
         cam.transform.position = Vector3.Lerp(cam.transform.position, destPos, Time.deltaTime * speed);
     }
+
+	public void BlockTeleport()
+	{
+		blocked = true;
+	}
+
+	public void UnblockTeleport()
+	{
+		blocked = false;
+	}
 }
