@@ -5,6 +5,8 @@ public class TriggerAnimation : MonoBehaviour {
     public string AnimationName;
     public Animator stateMachine;
 
+	/*
+
     private bool created = false;
 
     void Awake() {
@@ -22,6 +24,8 @@ public class TriggerAnimation : MonoBehaviour {
         }
 
     }
+
+	*/
 
     void Update() {
         //GvrViewer.Instance.UpdateState(); //need to update the data here otherwise we dont get mouse clicks; this is because we are automatically creating the GVRSDK (seems like a bug)
