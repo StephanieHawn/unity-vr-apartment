@@ -2,6 +2,8 @@
 VR apartment scene. Unity mobile app project for Udacity's VRND course.
 ## P2: Build an Apartment
 
+![VR Geek Apartment](/Screenshots/1.png?raw=true "VR Geek Apartment-01")
+
 Stephanie Hawn
 
 ## Platform
